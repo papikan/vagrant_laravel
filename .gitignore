@@ -1,0 +1,4 @@
+.DS_Store
+project/laravel/*
+project/laravel2/*
+vagrant/.vagrant/*

@@ -1,0 +1,21 @@
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+#Vagrant Box
+config.vm.box = "chef/centos-6.5"
+
+#encoding
+Encoding.default_external = 'UTF-8'
+
+#provision
+config.vm.provision :shell, :path => "bootstrap.sh"
+
+#Private IP
+config.vm.network "private_network", ip: "192.168.88.100"
+
+#Shared Folder
+config.vm.synced_folder "../project/laravel", "/var/laravel"
+config.vm.synced_folder "../project/laravel2", "/var/laravel2"
+
+end
